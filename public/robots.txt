@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apexguide.eu/sitemap.xml

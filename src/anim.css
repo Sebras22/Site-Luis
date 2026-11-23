@@ -1,0 +1,109 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-link {
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.nav-link:hover {
+  border-bottom-color: var(--site-border);
+}
+.nav-link[aria-current='page'] {
+  border-bottom-color: var(--mantine-primary-color-filled);
+}
+
+.mantine-Button-root {
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.mantine-Button-root:hover {
+  transform: translateY(-2px);
+}
+
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+.card-lift img {
+  transition: transform 0.6s ease;
+}
+.card-lift:hover img {
+  transform: scale(1.06);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-stagger > * {
+  animation: rise 0.8s ease both;
+}
+.hero-stagger > :nth-child(2) {
+  animation-delay: 0.12s;
+}
+.hero-stagger > :nth-child(3) {
+  animation-delay: 0.24s;
+}
+.hero-stagger > :nth-child(4) {
+  animation-delay: 0.36s;
+}
+.hero-photo {
+  animation: pop 1s ease 0.2s both;
+}
+.page-fade {
+  animation: fade 0.4s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

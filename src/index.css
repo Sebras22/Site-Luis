@@ -1,0 +1,78 @@
+/* Palette du site : vert forêt + crème, et l'inverse en thème sombre. */
+:root[data-mantine-color-scheme='light'] {
+  --mantine-color-body: #f5efe0;
+  --site-surface: #ebe3cd;
+  --site-card: #fbf8ef;
+  --site-border: #d9cfb4;
+  --site-ink: #16301f;
+  --site-hero: linear-gradient(135deg, #123a24 0%, #1f5a37 60%, #2f7545 100%);
+  --site-on-hero: #f5efe0;
+  --mantine-color-text: #16301f;
+  --mantine-color-dimmed: #5c6b5f;
+}
+
+:root[data-mantine-color-scheme='dark'] {
+  --mantine-color-body: #0e1c14;
+  --site-surface: #132619;
+  --site-card: #183024;
+  --site-border: #2b4636;
+  --site-ink: #f3ecd9;
+  --site-hero: linear-gradient(135deg, #0a1610 0%, #12301f 60%, #1b4a2b 100%);
+  --site-on-hero: #f3ecd9;
+  --mantine-color-text: #f3ecd9;
+  --mantine-color-dimmed: #a3a88f;
+}
+
+body {
+  background: var(--mantine-color-body);
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: 0.005em;
+}
+
+.hero {
+  background: var(--site-hero);
+  color: var(--site-on-hero);
+}
+
+.surface {
+  background: var(--site-surface);
+}
+
+.card {
+  background: var(--site-card);
+  border: 1px solid var(--site-border);
+}
+
+.wordmark {
+  display: inline-flex;
+  color: inherit;
+  text-decoration: none;
+}
+.wordmark-logo {
+  display: block;
+  height: 46px;
+  aspect-ratio: 480 / 267;
+  background-color: currentColor;
+  -webkit-mask: url('/logo.png') center / contain no-repeat;
+  mask: url('/logo.png') center / contain no-repeat;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--mantine-radius-md);
+}
+
+
+/* Bouton contour crème, à utiliser sur fond vert */
+.btn-ghost {
+  background: transparent !important;
+  color: var(--site-on-hero) !important;
+  border: 1.5px solid var(--site-on-hero) !important;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
